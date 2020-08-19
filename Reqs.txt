@@ -1,0 +1,53 @@
+Domain
+ - BookToHome
+
+Objects
+ - Books
+ - Users (As a Manager)
+ - Users (As a Customer)
+ - Store
+ - Comics
+ - Collector's Edition
+
+
+Scenarios
+  1 - A manager buys books
+    - Store=0
+    - User(Manager)->buy("Rayuela", 4)
+    - User(Manager)->buy("El Aleph", 5)
+    - Store > Books > Rayuela = 4, El Aleph=5
+  
+  2 - As a customer of the store
+  	- Store > Books > Rayuela = 4
+  	- User(Customer)->rent("Rayuela")
+  	- Store > Books > Rayuela = 3
+
+  3 - A customer returns a book
+    - Store > Books > Rayuela = 3
+  	- User(Customer)->return("Rayuela")
+    - Store > Books > Rayuela = 4
+   
+  4-Add quality considerations
+   -Books start with X quality
+   -Quality>Degrades> -1/day 
+   -Quality = 0 > remove book
+   
+   5-new item: "Comics"
+   -Comic start with X quality
+   -Quality>Degrades> -2/day 
+   -Quality = 0 > remove comic
+   
+   6-Collector's Edition
+   -Books start with X quality
+   -Quality>Increase> +1/day 
+   
+   7- minimum stock feature
+        -A manager asks for books that are under the minimum stock limit
+        -Given the store has two units of a book titled "Rayuela" with a minimum stock of 4
+        -And the store has no units of a book titled "El Tunel" with a minimum stock of 3
+        -And the store has ten units of a book titled "El Aleph" with a minimum stock of 2 
+        -When the manager asks for the books under minimum stock limit 
+        -Then he obtains a list with the titles "Rayuela" and "El Tunel"
+
+   
+   
