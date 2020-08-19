@@ -16,3 +16,14 @@ Feature: Buy books
         When the manager buys five units of a book titled "El Aleph" 
         Then the store has four units of a book titled "Rayuela"
         Then the store has five units of a book titled "El Aleph" */
+
+const json = require("../data/data.json");
+
+console.log(json);
+
+const buyBook = (bookName, quantity) => {
+  const indexNum = json.data.indexOf( json.data.titulo == bookName);
+  console.log(indexNum);
+};
+
+buyBook("Rayuela");

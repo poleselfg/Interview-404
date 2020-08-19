@@ -3,14 +3,14 @@
     {
       "titulo": "Rayuela",
       "precio": 0,
-      "cantidad":0
-      "tipo":"Libro
+      "cantidad": 0,
+      "tipo": "Libro"
     },
     {
-      "titulo": "El Aleph,
+      "titulo": "El Aleph",
       "precio": 0,
-      "cantidad":0
-      "tipo":"Libro
+      "cantidad": 0,
+      "tipo": "Libro"
     }
   ]
 }
