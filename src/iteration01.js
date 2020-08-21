@@ -19,11 +19,9 @@ Feature: Buy books
 
 const json = require("../data/data.json");
 
-console.log(json);
-
 const buyBook = (bookName, quantity) => {
-  const indexNum = json.data.indexOf( json.data.titulo == bookName);
-  console.log(indexNum);
+  const bookFind = json.data.find((element) => element.titulo == bookName);
+  console.log(bookFind);
 };
 
 buyBook("Rayuela");
