@@ -14,15 +14,15 @@ Feature: Rent a book
         Given there are three units of a book titled "Rayuela" in the store
         When a customer returns a book titled "Rayuela"
         Then the store has four units of a book titled "Rayuela" */
-
-const json = require(`../data/data.json`);
+const json = require("../data/data.json");
 const fs = require("fs");
 
-const rentBook = (bookName) => {
+const rentBook = (bookName, rent) => {
   const updated = json.data.map((item) => {
     if (bookName == item.titulo && item.cantidad > 0) {
-      item.cantidad -= 1;
-      console.log(`${bookName} alquilado restan ${item.cantidad} en deposito`);
+      item.cantidad = rent ? item.cantidad - 1 : item.cantidad + 1;
+    } else if (bookName == item.titulo && item.cantidad == 0) {
+      item.cantidad = rent ? console.log("sin existensias") : item.cantidad + 1;
     }
 
     return item;
@@ -30,24 +30,8 @@ const rentBook = (bookName) => {
 
   json.data = updated;
 
-  fs.writeFileSync(`../data/data.json`, JSON.stringify(json));
+  fs.writeFileSync("../data/data.json", JSON.stringify(json));
 };
 
-const returnBook = (bookName) => {
-  const updated = json.data.map((item) => {
-    if (bookName == item.titulo && item.cantidad > 0) {
-      item.cantidad += 1;
-      console.log(`${bookName} devuelto restan ${item.cantidad} en deposito`);
-    }
-
-    return item;
-  });
-
-  json.data = updated;
-
-  fs.writeFileSync(`../data/data.json`, JSON.stringify(json));
-};
-rentBook("Rayuela");
-rentBook("El Aleph");
-returnBook("Rayuela");
-returnBook("El Aleph");
+rentBook("Rayuela", true);
+rentBook("Rayuela", false);
