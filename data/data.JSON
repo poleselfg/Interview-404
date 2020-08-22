@@ -1,16 +1,1 @@
-{
-  "data": [
-    {
-      "titulo": "Rayuela",
-      "precio": 0,
-      "cantidad": 0,
-      "tipo": "Libro"
-    },
-    {
-      "titulo": "El Aleph",
-      "precio": 0,
-      "cantidad": 0,
-      "tipo": "Libro"
-    }
-  ]
-}
+{"data":[{"titulo":"Rayuela","precio":0,"cantidad":8,"tipo":"Libro"},{"titulo":"El Aleph","precio":0,"cantidad":10,"tipo":"Libro"}]}

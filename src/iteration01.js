@@ -17,11 +17,22 @@ Feature: Buy books
         Then the store has four units of a book titled "Rayuela"
         Then the store has five units of a book titled "El Aleph" */
 
-const json = require("../data/data.json");
+const json = require(`../data/data.json`);
+const fs = require("fs");
 
 const buyBook = (bookName, quantity) => {
-  const bookFind = json.data.find((element) => element.titulo == bookName);
-  console.log(bookFind);
+  const updated = json.data.map((item) => {
+    if (bookName == item.titulo) {
+      item.cantidad += quantity;
+    }
+
+    return item;
+  });
+
+  json.data = updated;
+
+  fs.writeFileSync(`../data/data.json`, JSON.stringify(json));
 };
 
-buyBook("Rayuela");
+buyBook("Rayuela", 4);
+buyBook("El Aleph", 5);
