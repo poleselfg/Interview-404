@@ -14,12 +14,8 @@ Feature: Minimum stock
 const json = require(`../data/data.json`);
 
 const stockStatus = () => {
-  json.data.map((item) => {
-    if (item.cantidad <= item.minStock) {
-      console.table(item);
-    }
-    return item;
-  });
+  const status = json.data.filter((item) => item.cantidad <= item.minStock);
+  console.table(status);
 };
 
 stockStatus();
