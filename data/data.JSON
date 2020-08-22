@@ -3,7 +3,8 @@
     {
       "titulo": "Rayuela",
       "precio": 0,
-      "cantidad": 0,
+      "cantidad": 2,
+      "minStock": 4,
       "tipo": "Libro",
       "quality": 100,
       "date": "2020-06-21T19:34:32+0000"
@@ -11,7 +12,17 @@
     {
       "titulo": "El Aleph",
       "precio": 0,
+      "cantidad": 10,
+      "minStock": 2,
+      "tipo": "Libro",
+      "quality": 100,
+      "date": "2020-07-21T19:34:32+0000"
+    },
+    {
+      "titulo": "El Tunel",
+      "precio": 0,
       "cantidad": 0,
+      "minStock": 3,
       "tipo": "Libro",
       "quality": 100,
       "date": "2020-07-21T19:34:32+0000"
@@ -19,7 +30,8 @@
     {
       "titulo": "SpiderMan",
       "precio": 0,
-      "cantidad": 0,
+      "cantidad": 10,
+      "minStock": 0,
       "tipo": "Comic",
       "quality": 100,
       "date": "2020-07-21T19:34:32+0000"
@@ -27,7 +39,8 @@
     {
       "titulo": "Clean Code",
       "precio": 0,
-      "cantidad": 0,
+      "cantidad": 10,
+      "minStock": 0,
       "tipo": "Collectors",
       "quality": 100,
       "date": "2020-07-21T19:34:32+0000"
