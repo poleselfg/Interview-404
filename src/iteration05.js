@@ -1,7 +1,7 @@
 /*Iteration 5: Add a new item: "Collector's Edition"
 The store incorporated a new kind of book, the "Collector's Edition". These books increases it's quality over time.*/
 
-const json = require(`../data/data.json`);
+const json = require(`../src/data/data.json`);
 const fs = require("fs");
 const now = new Date();
 

@@ -11,7 +11,7 @@ Feature: Minimum stock
         And the store has ten units of a book titled "El Aleph" with a minimum stock of 2 
         When the manager asks for the books under minimum stock limit 
         Then he obtains a list with the titles "Rayuela" and "El Tunel"*/
-const json = require(`../data/data.json`);
+const json = require(__dirname+`/data/data.json`);
 
 const stockStatus = () => {
   const status = json.data.filter((item) => item.cantidad <= item.minStock);
