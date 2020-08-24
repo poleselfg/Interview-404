@@ -4,14 +4,15 @@ When quality reaches 0 the store will have to remove the book from it's inventor
 
 const json = require(`../data/data.json`);
 const fs = require("fs");
-const moment = require("moment");
-const now = moment(new Date());
+
+const now = new Date();
 
 const diffBook = (bookName) => {
   const updated = json.data.map((item) => {
     if (bookName == item.titulo) {
-      const diffTime = moment.duration(now.diff(item.date));
-      const diffDays = diffTime.asDays();
+      const itemTime = new Date(item.date).getTime();
+      const diff = now - itemTime;
+      var diffDays = diff / (1000 * 60 * 60 * 24);
       item.quality = item.quality -= diffDays;
     }
     if (item.quality <= 0) {
@@ -22,7 +23,7 @@ const diffBook = (bookName) => {
 
   json.data = updated;
 
-  fs.writeFileSync("data/data.json", JSON.stringify(json));
+  fs.writeFileSync(__dirname + "/data/data.json", JSON.stringify(json));
 };
 
 diffBook("Rayuela");

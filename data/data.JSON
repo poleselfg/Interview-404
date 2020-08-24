@@ -7,7 +7,7 @@
       "minStock": 4,
       "tipo": "Libro",
       "quality": 100,
-      "date": "2020-06-21T19:34:32+0000"
+      "date": "2020-06-21"
     },
     {
       "titulo": "El Aleph",
@@ -16,7 +16,7 @@
       "minStock": 2,
       "tipo": "Libro",
       "quality": 100,
-      "date": "2020-07-21T19:34:32+0000"
+      "date": "2020-07-21"
     },
     {
       "titulo": "El Tunel",
@@ -25,7 +25,7 @@
       "minStock": 3,
       "tipo": "Libro",
       "quality": 100,
-      "date": "2020-07-21T19:34:32+0000"
+      "date": "2020-07-21"
     },
     {
       "titulo": "SpiderMan",
@@ -34,7 +34,7 @@
       "minStock": 0,
       "tipo": "Comic",
       "quality": 100,
-      "date": "2020-07-21T19:34:32+0000"
+      "date": "2020-07-21"
     },
     {
       "titulo": "Clean Code",
@@ -43,7 +43,7 @@
       "minStock": 0,
       "tipo": "Collectors",
       "quality": 100,
-      "date": "2020-07-21T19:34:32+0000"
+      "date": "2020-07-21"
     }
   ]
 }

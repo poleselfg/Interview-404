@@ -3,14 +3,14 @@ In order to reach younger customers, the store now started to offer comics. Comi
 
 const json = require(`../data/data.json`);
 const fs = require("fs");
-const moment = require("moment");
-const now = moment(new Date());
+const now = new Date();
 
-const diffComic = (comicName) => {
+const diffComic = (bookName) => {
   const updated = json.data.map((item) => {
-    if (comicName == item.titulo && item.tipo === "Comic") {
-      const diffTime = moment.duration(now.diff(item.date));
-      const diffDays = diffTime.asDays();
+    if (bookName == item.titulo && item.tipo === "Comic") {
+      const itemTime = new Date(item.date).getTime();
+      const diff = now - itemTime;
+      var diffDays = diff / (1000 * 60 * 60 * 24);
       item.quality = item.quality -= diffDays * 2;
     }
     if (item.quality <= 0) {
@@ -21,7 +21,7 @@ const diffComic = (comicName) => {
 
   json.data = updated;
 
-  fs.writeFileSync("data/data.json", JSON.stringify(json));
+  fs.writeFileSync(__dirname + "/data/data.json", JSON.stringify(json));
 };
 
 diffComic("SpiderMan");
